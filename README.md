@@ -19,8 +19,3 @@ pip install requirements.txt
 python call_logs.py -h
 
 python call_logs.py <API_KEY> <API_SECRET> --from_date=2019-12-31 --number_of_days=30 --call_direction=all
-
-
-
-## License
-[APACHE](http://www.apache.org/licenses/LICENSE-2.0)
