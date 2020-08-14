@@ -97,6 +97,9 @@ def get_call_logs(API_KEY: str, API_SECRET: str, from_date: datetime.datetime, n
 # Run this script using argparse
 
 if __name__ == "__main__":
+
+    # Run script with ArgParser
+
     parser = argparse.ArgumentParser(prog="Zoom Phone Call Log Exporter", description='Script to access Zoom Phone Call Logs via marketplace.zoom.us API.')
     parser.add_argument("API_KEY",type=str,help="API key for Zoom account.")
     parser.add_argument("API_SECRET",type=str,help="API secret for Zoom account.")
@@ -104,23 +107,16 @@ if __name__ == "__main__":
     parser.add_argument("--number_of_days", type=int , default=1, help="Number of days to pull call logs. Max 30 days.")
     parser.add_argument("--call_direction", type=str , default='all', help="Specify 'all', 'inbound', or 'outbound'")
     args = parser.parse_args()
-
     get_call_logs(args.API_KEY, args.API_SECRET, args.from_date, args.number_of_days, args.call_direction)
 
-# This script can run using the below configuration and removing the above argparse dependency
+    # This script can run using the below configuration and removing the above argparse
 
-'''
-if __name__ == "__main__":
-
-    # API KEY and SECRET come from JWT token created on marketplace.zoom.us
-    
+    '''
+    # API KEY and SECRET come from JWT token created on marketplace.zoom.us 
     API_KEY = ''                              # Store API_KEY and API_SECRET confidentially as this provides admin level access to the Zoom account
     API_SECRET = input("Enter API_SECRET: ")
-    
-    
     from_date = datetime.datetime(2020, 5, 1)
     number_of_days = 30  # API will not return more than 30 days, do not use a value > 30
     call_direction = 'outbound' # 'outbound', 'inbound', 'all'
-    
     get_call_logs(API_KEY, API_SECRET, from_date, number_of_days, call_direction)
-'''
+    '''
