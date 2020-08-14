@@ -1,6 +1,6 @@
-# Zoom Phone Call Logs Exporter
+# Zoom Phone Sample Scripts
 
-This script downloads Zoom Phone Calls Logs using the Zoom API (marketplace.zoom.us)
+These scripts are sample scripts for Zoom Phone. See Zoom API documentation on marketplace.zoom.us
 
 ## Installation
 
@@ -13,6 +13,8 @@ pip install requirements.txt
 ```
 
 ## Usage
+
+### Call Log Exporter
 
 python call_logs.py -h
 
